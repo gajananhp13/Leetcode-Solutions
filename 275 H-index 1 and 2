@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int hIndex(vector<int>& c) {
+        int n=c.size();
+        int count=0;
+        for(int i =0;i<n;i++){
+            if(c[i]>=c.size()-i)
+            {
+                count++;
+            }
+        }
+    return count;}
+};
