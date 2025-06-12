@@ -1,14 +1,23 @@
 class Solution {
 public:
     int mySqrt(int x) {
-        if(x==0) return 0;
-        if (x>0 && x<=3) return 1;   //square less than 4 are 1 itself
+        int low=1, high=x;
+        if(x==0)
+        return x;
 
-        for (int i=3;i<x/2+3; i++) {
-            if (i>x/i) {
-                return i-1;  // it will return the lower bound of the number always
-                }
+        while(low<=high)
+        {
+           int mid=low+(high-low)/2;
+           if(mid==x/mid) 
+        {   
+           return mid;
         }
-        return -1;
+           else if (mid > x/mid)
+            high=mid-1;
+       else 
+       low=mid+1;
+        }
+
+        return high;
     }
 };
