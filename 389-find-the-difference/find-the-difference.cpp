@@ -6,6 +6,6 @@ char findTheDifference(string s, string t) {
             res -= s[i];
             res += t[i];
         }
-        return res;
+        return char(res);
     }
 };
